@@ -1372,5 +1372,55 @@ function deptoMaisValioso(){
         }
     }    
     console.log(DeptoMaisValioso);
+    return maiorSoma;
 }
-deptoMaisValioso();
+let MaiorvalordeSoma = deptoMaisValioso();
+
+//15ª questão: Departamento menos valioso (similar ao anterior):
+//Nome: Pedro Rangel
+//a função deptoMenosValioso recebe como parâmetro o maior valor de somatória dos itens. Este valor foi recebido da função deptoMaisValioso e entregue à função deptoMaisValioso. 
+
+function deptoMenosValioso(maiorSoma){
+
+    var listaDeptos = [];
+    let codDepto = 0;
+    let menorSoma = maiorSoma;
+    let DeptoMenosValioso ="";
+
+    for (i = 0; i <listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        if (produto.departamento.idDepto != codDepto){
+            let itemLista = {
+                nomeDepto : produto.departamento.nomeDepto,
+                idDepto : produto.departamento.idDepto,
+                totalValorDosItens: 0,
+                
+            } 
+            
+        listaDeptos.push(itemLista);
+        codDepto = produto.departamento.idDepto;
+
+        }
+    }
+    
+// Para cada produto, percorrer cada um dos departamentos da lista, fazendo as devidas somatórias
+
+    for (i=0; i<listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        for (j=0;j<listaDeptos.length;j++){
+            if(produto.departamento.idDepto == listaDeptos[j].idDepto){
+                listaDeptos[j].totalValorDosItens += produto.preco*produto.qtdEstoque
+                break
+            }
+
+        }
+    }
+    for (j=0;j<listaDeptos.length;j++){
+        if(menorSoma > listaDeptos[j].totalValorDosItens){
+            menorSoma = listaDeptos[j].totalValorDosItens;
+            DeptoMenosValioso = listaDeptos[j].nomeDepto; 
+        }
+    }    
+    console.log(DeptoMenosValioso);
+}
+deptoMenosValioso(MaiorvalordeSoma);
