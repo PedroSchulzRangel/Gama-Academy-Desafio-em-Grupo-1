@@ -1377,8 +1377,8 @@ function deptoMaisValioso(){
 let MaiorvalordeSoma = deptoMaisValioso();
 
 //15ª questão: Departamento menos valioso (similar ao anterior):
-//Nome: Pedro Rangel
-//a função deptoMenosValioso recebe como parâmetro o maior valor de somatória dos itens. Este valor foi recebido da função deptoMaisValioso e entregue à função deptoMaisValioso. 
+//Autor: Pedro Rangel
+//a função deptoMenosValioso recebe como parâmetro o maior valor de somatória dos itens. Este valor foi recebido da função deptoMaisValioso e entregue à função deptoMenosValioso. 
 
 function deptoMenosValioso(maiorSoma){
 
